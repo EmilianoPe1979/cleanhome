@@ -63,12 +63,6 @@ export default function Layout({ children }) {
                             <FontAwesomeIcon icon={faChartSimple} className="me-2 text-blue-300" />
                             Estadísticas
                         </Link>
-
-                        {/* Acerca de Nosotros */}
-                        <Link href="/about" className="hover:text-blue-200 transition-colors duration-300 flex items-center py-2 md:py-0">
-                            <FontAwesomeIcon icon={faCircleInfo} className="me-2 text-blue-300" />
-                            Acerca de Nosotros
-                        </Link>
                     </div>
                 </div>
             </nav>

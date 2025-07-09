@@ -5,6 +5,7 @@ export default function EditProductModal({ product, onClose }) {
   const [price, setPrice] = useState(product.price || "");
   const [image, setImage] = useState(product.image || "");
   const [description, setDescription] = useState(product.description || "");
+  const [funcion, setFuncion] = useState(product.funcion || "");
 
   // Se ejecuta cuando el usuario envía el formulario
   const handleSubmit = (e) => {
@@ -16,6 +17,7 @@ export default function EditProductModal({ product, onClose }) {
       price: parseFloat(price),
       image,
       description,
+      funcion,
     };
 
     // Actualiza en localStorage
@@ -64,6 +66,18 @@ export default function EditProductModal({ product, onClose }) {
             onChange={(e) => setDescription(e.target.value)}
             className="w-full border rounded p-2"
           ></input>
+        </div>
+
+        <div>
+          <label className="block font-semibold">Función:</label>
+          <input
+            type="text"
+            placeholder="limpiador, desinfectante, detergente..."
+            value={funcion}
+            onChange={(e) => setFuncion(e.target.value)}
+            required
+            className="w-full border rounded p-2"
+          />
         </div>
 
         <div>

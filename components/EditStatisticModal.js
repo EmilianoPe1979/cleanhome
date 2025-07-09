@@ -51,7 +51,7 @@ export default function EditStatisticModal({ statistic, onClose }) {
           <label className="block font-semibold">Tipo:</label>
           <input
             type="text"
-            placeholder="Tipo de venta (producto/servicio)"
+            placeholder="producto o servicio"
             value={tipo}
             onChange={(e) => setTipo(e.target.value)}
             className="w-full border rounded p-2"

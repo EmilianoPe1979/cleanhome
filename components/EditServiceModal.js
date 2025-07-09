@@ -5,6 +5,7 @@ export default function EditServiceModal({ service, onClose }) {
   const [price, setPrice] = useState(service.price || "");
   const [image, setImage] = useState(service.image || "");
   const [description, setDescription] = useState(service.description || "");
+  const [funcion, setFuncion] = useState(service.funcion || "");
 
   // Se ejecuta cuando el usuario envía el formulario
   const handleSubmit = (e) => {
@@ -16,6 +17,7 @@ export default function EditServiceModal({ service, onClose }) {
       price: parseFloat(price),
       image,
       description,
+      funcion,
     };
 
     // Actualiza en localStorage
@@ -64,6 +66,18 @@ export default function EditServiceModal({ service, onClose }) {
             onChange={(e) => setDescription(e.target.value)}
             className="w-full border rounded p-2"
           ></input>
+        </div>
+
+        <div>
+          <label className="block font-semibold">Función:</label>
+          <input
+            type="text"
+            placeholder="general o tecnica"
+            value={funcion}
+            onChange={(e) => setFuncion(e.target.value)}
+            required
+            className="w-full border rounded p-2"
+          />
         </div>
 
         <div>

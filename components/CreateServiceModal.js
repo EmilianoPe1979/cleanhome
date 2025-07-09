@@ -5,6 +5,7 @@ export default function CreateServiceModal({ onClose }) {
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
+  const [funcion, setFuncion] = useState("");
 
   // Se ejecuta cuando el usuario envía el formulario
   const handleSubmit = async (e) => {
@@ -16,6 +17,7 @@ export default function CreateServiceModal({ onClose }) {
       price: parseFloat(price),
       image,
       description,
+      funcion,
     };
 
     try {
@@ -68,6 +70,18 @@ export default function CreateServiceModal({ onClose }) {
               type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
+              required
+              className="w-full border rounded p-2"
+            />
+          </div>
+
+          <div>
+            <label className="block font-semibold">Función:</label>
+            <input
+              type="text"
+              placeholder="general o tecnica"
+              value={funcion}
+              onChange={(e) => setFuncion(e.target.value)}
               required
               className="w-full border rounded p-2"
             />

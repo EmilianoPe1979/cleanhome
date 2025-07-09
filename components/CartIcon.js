@@ -11,7 +11,7 @@ export default function CartIcon() {
 
   return (
     <Link href="/cart">
-      <div className="fixed top-4 right-4 flex items-center cursor-pointer bg-gray-200 rounded-full px-4 py-2 shadow z-50">
+      <div className="fixed top-20 right-4 flex items-center cursor-pointer bg-gray-200 rounded-full px-4 py-2 shadow z-50">
         <span className="mr-2">
           <FontAwesomeIcon icon={faCartShopping} />
         </span>

@@ -59,6 +59,7 @@ export default function CreateStatisticModal({ onClose }) {
             <label className="block font-semibold">Tipo:</label>
             <input
               type="text"
+              placeholder="producto o servicio"
               value={tipo}
               onChange={(e) => setTipo(e.target.value)}
               required

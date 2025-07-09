@@ -5,6 +5,7 @@ export default function CreateProductModal({ onClose }) {
   const [price, setPrice] = useState("");
   const [image, setImage] = useState("");
   const [description, setDescription] = useState("");
+  const [funcion, setFuncion] = useState("");
 
   // Se ejecuta cuando el usuario envía el formulario
   const handleSubmit = async (e) => {
@@ -16,6 +17,7 @@ export default function CreateProductModal({ onClose }) {
       price: parseFloat(price),
       image,
       description,
+      funcion,
     };
 
     try {
@@ -74,6 +76,18 @@ export default function CreateProductModal({ onClose }) {
           </div>
 
           <div>
+            <label className="block font-semibold">Función:</label>
+            <input
+              type="text"
+              placeholder="limpiador, desinfectante, detergente..."
+              value={funcion}
+              onChange={(e) => setFuncion(e.target.value)}
+              required
+              className="w-full border rounded p-2"
+            />
+          </div>
+
+          <div>
             <label className="block font-semibold">Precio:</label>
             <input
               type="number"
@@ -106,7 +120,7 @@ export default function CreateProductModal({ onClose }) {
             >
               Cancelar
             </button>
-            
+
             {/* "Guardar": al ser type="submit", dispara onSubmit={handleSubmit} del
             formulario. */}
             <button
