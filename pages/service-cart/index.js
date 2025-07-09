@@ -1,7 +1,8 @@
-import { CartProvider, useCart } from "@/context/CartContext";
+import { CartServiceProvider, useCart } from "@/context/CartServiceContext";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import CheckoutForm from "@/components/CheckoutForm";
 
 function CarritoPage() {
   const { cartItems, updateQuantity, clearCart, removeItem } = useCart();
@@ -14,7 +15,7 @@ function CarritoPage() {
   };
 
   const handleCompra = () => {
-    alert("¡Compra realizada con éxito!");
+    alert("¡Gracias por agendar, estamos en camino!");
     clearCart();
   };
 
@@ -25,8 +26,8 @@ function CarritoPage() {
       {cartItems.length === 0 ? (
         <p className="text-center">
           Tu carrito está vacío.{" "}
-          <Link href="/products" className="text-blue-500 underline">
-            Volver a productos
+          <Link href="/services" className="text-blue-500 underline">
+            Volver a servicios
           </Link>
         </p>
       ) : (
@@ -69,16 +70,10 @@ function CarritoPage() {
 
           <div className="text-right mt-4 flex flex-col sm:flex-row justify-end gap-4">
             <p className="text-xl font-bold">Total: ${calculateTotal()}</p>
-            <button
-              onClick={handleCompra}
-              className="bg-green-500 text-white mt-2 px-4 py-2 rounded hover:bg-green-600"
-            >
-              Comprar
-            </button>
 
             <button
               onClick={() => {
-                if (confirm("¿Seguro que quieres cancelar la compra?")) {
+                if (confirm("¿Seguro que quieres cancelar el pedido?")) {
                   clearCart();
                 }
               }}
@@ -87,6 +82,16 @@ function CarritoPage() {
               Cancelar
             </button>
           </div>
+          {/* Mostrar formulario solo si hay elementos */}
+          <CheckoutForm
+            onSubmit={(formData) => {
+              console.log("Datos del formulario:", formData);
+              alert(
+                `Gracias ${formData.nombre}, hemos recibido tu solicitud y estamos en camino.`
+              );
+              clearCart();
+            }}
+          />
         </div>
       )}
     </div>

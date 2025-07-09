@@ -2,8 +2,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import EditProductButton from "@/components/EditProductButton"; // Asegúrate de tener este componente si lo necesitas
-import DeleteProductButton from "@/components/DeleteProductButton"; // Asegúrate de tener este componente si lo necesitas
+import EditProductButton from "@/components/EditProductButton"; // Componente para editar productos
+import DeleteProductButton from "@/components/DeleteProductButton"; // Componente para eliminar productos
 import EditProductModal from "@/components/EditProductModal";
 
 export default function ProductDetail() {
